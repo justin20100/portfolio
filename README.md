@@ -1,4 +1,4 @@
-# Projet de découverte de Wordpress
+# Projet portfolio Wordpress
 
 Ce repository représente le protoflio de justin vincent pour le cours de DW
 
