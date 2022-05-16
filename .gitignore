@@ -1,11 +1,11 @@
 /*
 !.gitignore
-!wp-content/README.md
 !database.sql
 !README.md
+!imgs
 
-!/wp-content
-/wp-content/*
-!/wp-content/themes
-/wp-content/themes/*
-!/wp-content/themes/portfolio
+!site/wp-content
+site/wp-content/*
+!site/wp-content/themes
+site/wp-content/themes/*
+!site/wp-content/themes/portfolio
