@@ -5,7 +5,7 @@ class DW_controller{
     }
 
     run(){
-        // ici le dom est pret
+        console.log('coucou');
     }
 }
 window.dw = new DW_controller();
