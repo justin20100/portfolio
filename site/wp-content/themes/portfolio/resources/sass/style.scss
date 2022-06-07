@@ -1,4 +1,42 @@
 @import "reset";
-p{
-  color: red;
+
+// fonts
+
+// cacher des champs
+.hidden{
+  display: none;
+}
+
+// navigation
+nav{
+  display: flex;
+  justify-content: space-between;
+  margin: 1.4375em 6.25em 0 6.25em;//55/16
+}
+.item_2{
+  margin-left: 4.375em;
+}
+.nav__name{
+  text-align: center;
+}
+.nav__item{
+  margin-top: 1.3125em;
+}
+.name__lastname{
+  margin-top: 1.25em;
+}
+ul{
+  display: flex;
+}
+
+// CTA
+
+html{
+  background-color: rgba(188, 191, 84, 1);
+  color: white;
+}
+
+svg{
+  width: 3.4375em;
+  height: 3.4375em;
 }
