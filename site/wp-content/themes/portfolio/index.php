@@ -1,7 +1,18 @@
 <?php get_header(); ?>
 
     <main class="layout">
-        <section class="layout__projets projets">
+        <section class="layout__banner banner">
+            <h2 class="banner__title hidden"></h2>
+            <div class="banner__container">
+                <div class="banner__illustration">
+                    <img src="http://portfolio.test/wp-content/uploads/2022/06/banner.png" alt="illustration 3D d'une main sur un rond" class="banner__img">
+                </div>
+                <div class="banner__text">
+                    <p class="banner__text__p">Welcome to <strong>Justin</strong>’s gallery of <strong>Web</strong> Design & Development <strong>projects</strong>. </p>
+                </div>
+            </div>
+        </section>
+        <section id="projects" class="layout__projets projets">
             <h2 class="projets__title"><?= 'Mes projets' ?></h2>
             <div class="projets__container">
                 <?php if (have_posts()): ?>
@@ -13,7 +24,7 @@
                 <?php endif;?>
             </div>
         </section>
-        <aside class="layout__contact">
+        <aside class="layout__contact hidden">
             <h2 class="contact__title"><?= get_the_title(); ?></h2>
             <div class="contact__content">
                 <?php the_content(); ?>
