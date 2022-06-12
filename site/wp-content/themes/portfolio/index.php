@@ -5,16 +5,17 @@
             <h2 class="banner__title hidden"></h2>
             <div class="banner__container">
                 <div class="banner__illustration">
-                    <img src="http://portfolio.test/wp-content/uploads/2022/06/banner.png" alt="illustration 3D d'une main sur un rond" class="banner__img">
+                    <img alt="illustration 3D d'une main sur un rond" class="banner__img" src="<?php echo get_bloginfo('template_url') ?>/resources/img/banner.png">
                 </div>
                 <div class="banner__text">
                     <p class="banner__text__p">Welcome to <strong>Justin</strong>’s gallery of <strong>Web</strong> Design & Development <strong>projects</strong>. </p>
                 </div>
             </div>
         </section>
-        <section id="projects" class="layout__projets projets">
-            <h2 class="projets__title"><?= 'Mes projets' ?></h2>
+        <section id="projets" class="layout__projets projets">
+            <h2 class="projets__title">My projects</h2>
             <div class="projets__container">
+                <?php $numero = 0  ?>
                 <?php if (have_posts()): ?>
                     <?php  while (have_posts()): the_post();?>
                     <?php portfolio_include('post')?>
@@ -24,46 +25,18 @@
                 <?php endif;?>
             </div>
         </section>
-        <aside class="layout__contact hidden">
-            <h2 class="contact__title"><?= get_the_title(); ?></h2>
-            <div class="contact__content">
-                <?php the_content(); ?>
+        <section class="layout__about about">
+            <h2 class="about__title">About Me</h2>
+            <div class="about__container">
+                <div class="about__img">
+                    <img src="<?php echo get_bloginfo('template_url') ?>/resources/img/profile.jpeg" alt="">
+                </div>
+                <div class="about__text">
+                    <p>I'm Justin Vincent and I'm learning web development at the Higher Educational Institution of Liege's province. If you want to contact me, please use the button below.</p>
+                    <a href="#" class="about__link">Contact me</a>
+                </div>
             </div>
-            <?php if(! isset($_SESSION['contact_form_feedback']) || ! $_SESSION['contact_form_feedback']['success']) : ?>
-                <form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form" id="contact">
-                    <?php if(isset($_SESSION['contact_form_feedback'])) : ?>
-                        <p><?= __('Oups ! Il y a des erreurs dans le formulaire','dw'); ?></p>
-                    <?php endif; ?>
-                    <div class="form__field">
-                        <label for="firstname" class="form__label">Votre prénom</label>
-                        <input type="text" name="firstname" id="firstname" class="form__input" value="<?= portfolio_get_contact_field_value('firstname'); ?>">
-                        <?= portfolio_get_contact_field_error('firstname'); ?>
-                    </div>
-                    <div class="form__field">
-                        <label for="lastname" class="form__label">Votre nom</label>
-                        <input type="text" name="lastname" id="lastname" class="form__input" value="<?= portfolio_get_contact_field_value('lastname'); ?>">
-                        <?= portfolio_get_contact_field_error('lastname'); ?>
-                    </div>
-                    <div class="form__field">
-                        <label for="email" class="form__label">Votre adress email</label>
-                        <input type="email" name="email" id="email" class="form__input" value="<?= portfolio_get_contact_field_value('email'); ?>">
-                        <?= portfolio_get_contact_field_error('email'); ?>
-                    </div>
-                    <div class="form__field">
-                        <label for="message" class="form__label">Votre message</label>
-                        <textarea name="message" id="message" cols="30" rows="10" class="form__input"><?= portfolio_get_contact_field_value('message'); ?></textarea>
-                        <?= portfolio_get_contact_field_error('message'); ?>
-                    </div>
-                    <div class="form__actions">
-                        <?php wp_nonce_field('nonce_submit_contact'); ?>
-                        <input type="hidden" name="action" value="submit_contact_form" />
-                        <button class="form__button" type="submit">Envoyer</button>
-                    </div>
-                </form>
-            <?php else : ?>
-                <p id="contact"><?= __('Merci ! Votre message a bien été envoyé.','dw'); ?></p>
-                <?php unset($_SESSION['contact_form_feedback']); endif; ?>
-        </aside>
+        </section>
     </main>
 
 <?php get_footer(); ?>
