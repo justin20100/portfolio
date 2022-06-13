@@ -3,7 +3,7 @@
         <header class="post__head reveal">
             <p class="post__number"><?= get_field('numero'); ?></p>
             <h3 class="post__title"><?= get_the_title(); ?></h3>
-            <p class="post__meta">Publié par Vincent justin le
+            <p class="post__meta">Published by Vincent justin the
                 <time class="post__date" datetime="<?= get_the_date('c'); ?>"><?= get_the_date(); ?></time>
             </p>
             <?php $link = get_field('link'); ?>

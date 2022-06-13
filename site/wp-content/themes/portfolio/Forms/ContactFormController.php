@@ -13,7 +13,6 @@ class ContactFormController extends BaseFormController
             'firstname' => TextSanitizer::class,
             'lastname' => TextSanitizer::class,
             'email' => EmailSanitizer::class,
-            'phone' => TextSanitizer::class,
             'message' => TextSanitizer::class,
             'rules' => TextSanitizer::class,
         ];
