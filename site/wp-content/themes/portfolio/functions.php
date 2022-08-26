@@ -5,11 +5,11 @@ add_action('init', 'portfolio_boot_theme', 1);
 
 function portfolio_boot_theme()
 {
-load_theme_textdomain('portfolio', __DIR__ . '/locales');
+    load_theme_textdomain('portfolio', __DIR__ . '/locales');
 
-if (! session_id()) {
-session_start();
-}
+    if (!session_id()) {
+        session_start();
+    }
 }
 
 // Désactiver l'éditeur "Gutenberg" de Wordpress
@@ -24,11 +24,11 @@ function portfolio_mix($path)
 {
     $path = '/' . ltrim($path, '/');
 
-    if(! realpath(__DIR__ .'/public' . $path)) {
+    if (!realpath(__DIR__ . '/public' . $path)) {
         return;
     }
 
-    if(! ($manifest = realpath(__DIR__ .'/public/mix-manifest.json'))) {
+    if (!($manifest = realpath(__DIR__ . '/public/mix-manifest.json'))) {
         return get_stylesheet_directory_uri() . '/public' . $path;
     }
 
@@ -36,7 +36,7 @@ function portfolio_mix($path)
     $manifest = json_decode(file_get_contents($manifest), true);
 
     // Regarder si on a une clef qui correspond au fichier chargé dans $path
-    if(! array_key_exists($path, $manifest)) {
+    if (!array_key_exists($path, $manifest)) {
         return get_stylesheet_directory_uri() . '/public' . $path;
     }
 
