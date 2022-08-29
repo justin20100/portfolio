@@ -1,5 +1,6 @@
 <?php
-
+require_once(__DIR__ . '/Menus/PrimaryMenuWalker.php');
+require_once(__DIR__ . '/Menus/PrimaryMenuItem.php');
 require_once(__DIR__ . '/customSearchQuery.php');
 
 
@@ -78,11 +79,45 @@ function portfolio_get_projects( $search = null)
     return $projects;
 }
 
-// Fonction permettant d'inclure des "partials" dans la vue et d'y injecter des variables "locales" (uniquement disponibles dans le scope de l'inclusion).
-
-function portfolio_include(string $partial, array $variables = [])
+// Enregistrer les zones de menus
+register_nav_menu('primary', 'Navigation principale (haut de page)');
+// Fonction pour récupérer les éléments d'un menu sous forme d'un tableau d'objets
+function portfolio_get_menu_items($location)
 {
-    extract($variables);
+    $items = [];
 
-    include(__DIR__ . '/partials/' . $partial . '.php');
+    // Récupérer le menu Wordpress pour $location
+    $locations = get_nav_menu_locations();
+
+    if(! ($locations[$location] ?? false)) {
+        return $items;
+    }
+
+    $menu = $locations[$location];
+
+    // Récupérer tous les éléments du menu récupéré
+    $posts = wp_get_nav_menu_items($menu);
+
+    // Formater chaque élément dans une instance de classe personnalisée
+    // Boucler sur chaque $post
+    foreach($posts as $post) {
+        // Transformer le WP_Post en une instance de notre classe personnalisée
+        $item = new PrimaryMenuItem($post);
+
+        // Ajouter au tableau d'éléments de niveau 0.
+        if(! $item->isSubItem()) {
+            $items[] = $item;
+            continue;
+        }
+
+        // Ajouter $item comme "enfant" de l'item parent.
+        foreach($items as $parent) {
+            if(! $parent->isParentFor($item)) continue;
+
+            $parent->addSubItem($item);
+        }
+    }
+
+    // Retourner un tableau d'éléments du menu formatés
+    return $items;
 }
