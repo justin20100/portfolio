@@ -1,5 +1,8 @@
 <?php
 
+require_once(__DIR__ . '/customSearchQuery.php');
+
+
 // Lancer la sessions PHP pour pouvoir passer des variables de page en page
 add_action('init', 'portfolio_boot_theme', 1);
 
@@ -42,4 +45,44 @@ function portfolio_mix($path)
 
     // Récupérer & retourner le chemin versionné
     return get_stylesheet_directory_uri() . '/public' . $manifest[$path];
+}
+
+// Enregistrer un seul custom post-type pour "projects"
+register_post_type('project', [
+    'label' => 'Projects',
+    'labels' => [
+        'name' => 'Projects',
+        'singular_name' => 'Project',
+    ],
+    'description' => 'All the projects by Justin',
+    'public' => true,
+    'has_archive' => true,
+    'menu_position' => 8,
+    'menu_icon' => 'dashicons-palmtree',
+    'supports' => ['title','editor','thumbnail'],
+    'rewrite' => ['slug' => 'projects'],
+]);
+
+// Récupérer les projects via une requête Wordpress
+function portfolio_get_projects( $search = null)
+{
+    // 1. on instancie l'objet WP_Query
+    $projects = new Portfolio_CustomSearchQuery([
+        'post_type' => 'project',
+        'orderby' => 'date',
+        'order' => 'DESC',
+        's' => strlen($search) ? $search : null,
+    ]);
+
+    // 2. on retourne l'objet WP_Query
+    return $projects;
+}
+
+// Fonction permettant d'inclure des "partials" dans la vue et d'y injecter des variables "locales" (uniquement disponibles dans le scope de l'inclusion).
+
+function portfolio_include(string $partial, array $variables = [])
+{
+    extract($variables);
+
+    include(__DIR__ . '/partials/' . $partial . '.php');
 }

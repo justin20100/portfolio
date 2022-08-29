@@ -10,6 +10,5 @@
 </head>
 <body>
 <header class="header">
-    <h1 class="header__title"><?= get_bloginfo('name'); ?></h1>
-    <p class="header__tagline"><?= get_bloginfo('description'); ?></p>
+    <h1 class="header__title hidden"><?= get_bloginfo('name'); ?></h1>
 </header>
