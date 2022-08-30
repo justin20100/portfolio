@@ -1,6 +1,14 @@
+@import "fonctions";
 @import "reset";
-@import "footer";
-@import "header";
 @import "colors";
 @import "fonts";
+@import "header";
+@import "project";
+@import "footer";
 
+.hidden{
+  position: absolute;
+  left: 0;
+  top: -10000px;
+  overflow: hidden;
+}
