@@ -1,8 +1,9 @@
+<?php /* Template Name: projects */ ?>
 <?php get_header(); ?>
 <?php
 $ctaImage = get_field('illustration_cta');
 ?>
-
+</header>
     <main class="layout">
         <div class="projects">
             <h2 class="projects__title"><?php the_field('title_top'); ?></h2>

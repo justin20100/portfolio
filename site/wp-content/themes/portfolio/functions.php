@@ -6,7 +6,6 @@ require_once(__DIR__ . '/customSearchQuery.php');
 
 // Lancer la sessions PHP pour pouvoir passer des variables de page en page
 add_action('init', 'portfolio_boot_theme', 1);
-
 function portfolio_boot_theme()
 {
     load_theme_textdomain('portfolio', __DIR__ . '/locales');
@@ -23,7 +22,6 @@ add_filter('use_block_editor_for_post', '__return_false');
 add_theme_support('post-thumbnails');
 
 // Fonction qui charge les assets compilés et retourne leure chemin absolu (webpack)
-
 function portfolio_mix($path)
 {
     $path = '/' . ltrim($path, '/');
@@ -81,6 +79,7 @@ function portfolio_get_projects( $search = null)
 
 // Enregistrer les zones de menus
 register_nav_menu('primary', 'Navigation principale (haut de page)');
+
 // Fonction pour récupérer les éléments d'un menu sous forme d'un tableau d'objets
 function portfolio_get_menu_items($location)
 {

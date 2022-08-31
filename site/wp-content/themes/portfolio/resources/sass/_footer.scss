@@ -1,2 +1,28 @@
-// footer css file import in style.scss
+.footer__body {
+  margin: calc-em(100, 16) calc-em(100, 16);
+}
+
+.footer__container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.footer__subtitle {
+  font-family: robotoMedium, sans-serif;
+  font-size: calc-em(20, 16);
+  color: $middleGreen;
+  line-height: calc-em(23.44,20);
+  margin-bottom: calc-em(30,20);
+}
+.footer__item{
+  font-family: robotoLight,sans-serif;
+  line-height: calc-em(18.75,16);
+  margin-bottom: calc-em(20,20);
+}
+.footer__link{
+  text-decoration: none;
+  cursor: pointer;
+  color: $darkGreen;
+}
 

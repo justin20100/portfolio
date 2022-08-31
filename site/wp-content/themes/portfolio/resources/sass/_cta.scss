@@ -1,0 +1,39 @@
+.cta{
+  max-width: 1730px;
+}
+.cta__container{
+  margin: calc-em(50,16) calc-em(100,16) calc-em(215,16);
+  position: relative;
+}
+.cta__text{
+  font-family: rubikBold,sans-serif;
+  color: $darkGreen;
+}
+.cta__title{
+  font-size: calc-em(120,16);
+  line-height: calc-em(143,120);
+  margin-bottom: calc-em(30,120);
+  width: 70%;
+}
+.cta__description{
+  font-size: calc-em(22,16);
+  letter-spacing: 0.04em;
+}
+strong{
+  color: $appleGreen;
+}
+.cta__strongName{
+  display: inline-block;
+  animation: name 7s infinite;
+}
+.cta__illustration{
+  position: absolute;
+  top: -19em;
+  right: 10%;
+}
+.cta__img{
+  width: calc-em(430,16);
+  animation: hand 3s infinite ease-out;
+}
+
+

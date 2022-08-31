@@ -1,0 +1,35 @@
+.about{
+  max-width: 1730px;
+  color: $white;
+  margin-bottom: calc-em(100,16);
+}
+.about__title{
+  font-size: calc-em(96,16);
+  line-height: calc-em(115,96);
+  text-align: center;
+  margin-bottom: calc-em(80,96);
+}
+.about__container{
+  margin: 0 calc-em(100,16) 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.about__description{
+  font-family: robotoLight,sans-serif;
+  font-size: calc-em(24,16);
+  line-height: calc-em(36,24);
+  letter-spacing: calc-em(1,24);
+  margin-bottom: calc-em(45,24);
+}
+.about__button{
+  font-family: robotoMedium,sans-serif;
+  font-size: calc-em(17,16);
+  color: $white;
+  padding: calc-em(13,17) calc-em(40,17);
+  text-decoration: none;
+  border-radius: 0.8em;
+  background-color: $middleGreen;
+  cursor: pointer;
+}

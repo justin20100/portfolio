@@ -1,0 +1,21 @@
+header{
+  max-width: 1730px;
+}
+.nav{
+  margin: calc-em(50,16) calc-em(100,16) 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.nav__menu{
+  font-family: robotoLight,sans-serif;
+  font-size: calc-em(22,16);
+}
+.nav__item:first-child{
+  margin-bottom: calc-em(20,22);
+}
+.nav__link{
+  text-decoration: none;
+  color: $blackGreen;
+  border-bottom: solid 2px $appleGreen;
+}

@@ -1,9 +1,12 @@
 @import "fonctions";
+@import "keyframes";
 @import "reset";
 @import "colors";
 @import "fonts";
 @import "header";
+@import "cta";
 @import "project";
+@import "about";
 @import "footer";
 
 .hidden{
@@ -11,4 +14,25 @@
   left: 0;
   top: -10000px;
   overflow: hidden;
+}
+h1,h2,h3{
+  font-family: rubikBold,sans-serif;
+}
+header{
+  background-color: $white;
+  margin: 0 auto;
+}
+main{
+  background-color: $darkGreen;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer{
+  background-color: $white;
+  margin: 0 auto;
+  max-width: 1730px;
+}
+.button:hover{
+  animation: button 0.3s forwards;
 }

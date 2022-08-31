@@ -1,4 +1,78 @@
+.projects{
+  max-width: 1730px;
+  color: $white;
+}
+.projects__title{
+  font-size: calc-em(96,16);
+  line-height: calc-em(115,96);
+  text-align: center;
+  margin: calc-em(115,96) 0 calc-em(160,96);
+}
+.project{
+  margin-bottom: calc-em(200,16);
+}
+.project__container{
+  margin: 0 calc-em(100,16) 0;
+}
+.project__text{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
 .project_number{
-  font-family: manotuunn,sans-serif;
+  font-family: monoton,sans-serif;
   font-size: calc-em(140,16);
+}
+.project__description{
+  font-family: robotoLight,sans-serif;
+  font-size: calc-em(24,16);
+  line-height: calc-em(36,24);
+}
+
+/*  mockup */
+.project__illustration{
+  margin: calc-em(130,16) calc-em(70,16) 0;
+}
+.project__mockup{
+  width: 100%;
+}
+.project__adress{
+  width: 100%;
+  background-image: url("../../../../uploads/2022/08/mockup_safari.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  padding: 1.5% 0 ;
+}
+.project__view{
+  height: calc-em(650,16);
+  overflow: auto;
+  border-radius: 0 0 1em 1em;
+  box-shadow: 0 8px 8px 3px rgba(0,0,0,0.24);
+}
+.project__website{
+  width: 100%;
+}
+.project__url{
+  text-decoration: none;
+  color: $middleGreen;
+  font-family: robotoMedium,sans-serif;
+}
+.project__url:hover{
+  text-decoration-line: underline;
+}
+.project__link{
+  font-family: robotoMedium,sans-serif;
+  font-size: calc-em(17,16);
+  color: $white;
+  padding: calc-em(13,17) calc-em(40,17);
+  text-decoration: none;
+  border-radius: 0.8em;
+  background-color: $middleGreen;
+  position: relative;
+  bottom: 8px;
+  left: 43%;
+}
+.a.project__link:hover{
+  animation: button 0.3s forwards;
 }
