@@ -68,9 +68,8 @@ $aboutImage = get_field('illustration_about');
                 </div>
                 <div class="about__text">
                     <p class="about__description"><?php the_field('description_about'); ?></p>
-                    <div class="button">
-                        <a class="about__button"><?= get_field('button_about')['title']; ?></a>
-                    </div>
+                    <a href="<?= get_field('button_about')['url']; ?>"
+                       class="about__button"><?= get_field('button_about')['title']; ?></a>
                 </div>
             </div>
         </div>

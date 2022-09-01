@@ -3,39 +3,33 @@
 <?php
 $ctaImage = get_field('illustration_cta');
 ?>
-</header>
+    <div class="projectsIntro">
+        <div class="projectsIntro__container">
+            <div class="projectsIntro__text">
+                <h1 class="projectsIntro__title"><?php the_field('title') ?></h1>
+            </div>
+            <img src="<?= get_field('illustration')['url'] ?>" alt="<?= get_field('illustration')['alt'] ?>"
+                 class="projectsIntro__img">
+        </div>
+    </div>
+    </header>
     <main class="layout">
-        <div class="projects">
-            <h2 class="projects__title"><?php the_field('title_top'); ?></h2>
-            <?php
-            $number = 0;
-            if (($trips = portfolio_get_projects())->have_posts()): while ($trips->have_posts()): $trips->the_post(); ?>
-                <?php if (get_field('if_top')):
-                    $number++; ?>
-                    <article class="project">
-                        <h3 class="trip__title hidden"><?php the_field('title') ?></h3>
-                        <div class="project__container">
-                            <div class="project__text">
-                                <p class="project_number">0<?= $number; ?></p>
-                                <p class="project__description"><?php the_field('description') ?></p>
-                            </div>
-                            <div class="project__illustration">
-                                <div class="project__mockup">
-                                    <a href="<?= get_field('link')['url'] ?>"
-                                       class="project__url"><?= get_field('link')['url'] ?></a>
-                                    <div class="project__view">
-                                        <img src="<?= get_field('illustration_site')['url'] ?>"
-                                             alt="<?= get_field('illustration_site')['alt'] ?>"
-                                             class="project__website">
-                                    </div>
-                                </div>
-                                <button class="project__button"><a href="<?= get_field('link')['url'] ?>"
-                                                                   class="project__link"><?= get_field('link')['title'] ?></a>
-                                </button>
-                            </div>
+        <div class="cards">
+            <?php if (($trips = portfolio_get_projects())->have_posts()): while ($trips->have_posts()): $trips->the_post(); ?>
+                <article class="card">
+                    <div class="card__container">
+                        <div class="card__illustration">
+                            <img src="<?= get_field('illustration')['url'] ?>"
+                                 alt="<?= get_field('illustration')['alt'] ?>" class="card__illustration">
                         </div>
-                    </article>
-                <?php endif; ?>
+                        <div class="card__text">
+                            <h2 class="card__title"><?php the_field('title') ?></h2>
+                            <p class="card__description"><?php the_field('description') ?></p><a target="_blank"
+                                                                                                 href="<?= get_field('link')['url'] ?>"
+                                                                                                 class="card__link"><?= get_field('link')['title'] ?></a>
+                        </div>
+                    </div>
+                </article>
             <?php endwhile; else: ?>
                 <p class="trips__empty">No projects to show now. Sorry</p>
             <?php endif;

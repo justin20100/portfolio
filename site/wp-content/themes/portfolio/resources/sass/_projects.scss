@@ -1,0 +1,59 @@
+/* ----- cta ----- */
+.projectsIntro{
+  margin: 0 calc-em(100,16);
+}
+.projectsIntro__container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+}
+.projectsIntro__title{
+  font-size: calc-em(120,16);
+  color: $darkGreen;
+}
+/* ----- project cards ----- */
+.cards{
+  margin: calc-em(100,16);
+  max-width: 1300px;
+}
+.card__container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "left right";
+  align-items: center;
+  justify-items: center;
+}
+.card:nth-child(2n) .card__container .card__illustration{
+  grid-area: right;
+}
+.card:nth-child(2n) .card__container .card__text{
+  grid-area: left;
+}
+.card__illustration{
+  border-radius: calc-em(20,16);
+}
+.card__text{
+  padding: 0 calc-em(75,16);
+  color: $white;
+}
+.card__title{
+  font-size: calc-em(40,16);
+  margin-bottom: calc-em(50,40);
+}
+.card__description{
+  font-family: robotoLight,sans-serif;
+  font-size: calc-em(22,16);
+  line-height: 1.5em;
+  margin-bottom: calc-em(50,22);
+}
+.card__link{
+  font-family: robotoMedium,sans-serif;
+  font-size: calc-em(17,16);
+  color: $white;
+  padding: calc-em(13,17) calc-em(40,17);
+  text-decoration: none;
+  border-radius: 0.8em;
+  background-color: $middleGreen;
+  cursor: pointer;
+}
