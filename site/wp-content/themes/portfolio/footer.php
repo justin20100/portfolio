@@ -18,17 +18,6 @@
                 </ul>
             </div>
             <div class="footer__part">
-                <h3 class="footer__subtitle"><?php the_field('title_contact_footer'); ?></h3>
-                <ul class="footer__list">
-                    <li class="footer__item"><a href="<?= get_field('contact_footer_1')['url']; ?>"
-                                                class="footer__link"><?= get_field('contact_footer_1')['title']; ?></a>
-                    </li>
-                    <li class="footer__item"><a href="<?= get_field('contact_footer_2')['url']; ?>"
-                                                class="footer__link"><?= get_field('contact_footer_2')['title']; ?></a>
-                    </li>
-                </ul>
-            </div>
-            <div class="footer__part">
                 <h3 class="footer__subtitle"><?php the_field('title_social_footer'); ?></h3>
                 <ul class="footer__list">
                     <li class="footer__item"><a href="<?= get_field('social_footer_1')['url']; ?>"
@@ -39,6 +28,20 @@
                     </li>
                 </ul>
             </div>
+            <div class="footer__part">
+                <h3 class="footer__subtitle"><?php the_field('title_contact_footer'); ?></h3>
+                <ul class="footer__list">
+                    <li class="footer__item"><a href="<?= get_field('contact_footer_1')['url']; ?>"
+                                                class="footer__link"><?= get_field('contact_footer_1')['title']; ?></a>
+                    </li>
+                    <li class="footer__item"><a href="<?= get_field('contact_footer_2')['url']; ?>"
+                                                class="footer__link"><?= get_field('contact_footer_2')['title']; ?></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__mentions">
+            <a href="<?= get_the_permalink(portfolio_get_template_page('template-mentions')); ?>" class="footer__mentionsLink">Legal mentions</a>
         </div>
     </section>
 </footer>

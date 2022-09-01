@@ -1,0 +1,31 @@
+.layout_mentions{
+  background-color: $white;
+}
+.mentions{
+  max-width: 1730px;
+  margin-top: calc-em(100, 16);
+}
+.mentions__container{
+  margin: 0 calc-em(120, 16);
+}
+.mentions__title{
+  font-size: calc-em(96,16);
+  text-align: center;
+  color: $appleGreen;
+  margin-bottom: calc-em(140,96);
+}
+.mentions__subtitle{
+  font-size: calc-em(32,16);
+  color: $darkGreen;
+  margin-bottom: calc-em(50,32);
+}
+.mentions__text{
+  font-family: robotoLight,sans-serif;
+  font-size: calc-em(20,16);
+  margin-bottom:  calc-em(20,20);
+  line-height: 1.4em;
+  letter-spacing: 0.05em;
+}
+.mentions__part{
+  margin-bottom: calc-em(80,16);
+}

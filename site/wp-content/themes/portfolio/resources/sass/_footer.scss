@@ -1,13 +1,9 @@
-.footer__body {
-  margin: calc-em(100, 16) calc-em(100, 16);
-}
-
 .footer__container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin: calc-em(100, 16) calc-em(100, 16);
 }
-
 .footer__subtitle {
   font-family: robotoMedium, sans-serif;
   font-size: calc-em(20, 16);
@@ -23,6 +19,15 @@
 .footer__link{
   text-decoration: none;
   cursor: pointer;
+  color: $darkGreen;
+}
+.footer__mentions{
+  text-align: center;
+  padding-bottom: calc-em(20,16) ;
+}
+.footer__mentionsLink{
+  font-family: robotoLight,sans-serif;
+  font-size: calc-em(14,16);
   color: $darkGreen;
 }
 

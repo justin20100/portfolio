@@ -7,6 +7,7 @@
 @import "cta";
 @import "project";
 @import "about";
+@import "mentions";
 @import "footer";
 
 .hidden{
@@ -19,7 +20,6 @@ h1,h2,h3{
   font-family: rubikBold,sans-serif;
 }
 header{
-  background-color: $white;
   margin: 0 auto;
 }
 main{
@@ -29,7 +29,6 @@ main{
   align-items: center;
 }
 footer{
-  background-color: $white;
   margin: 0 auto;
   max-width: 1730px;
 }
