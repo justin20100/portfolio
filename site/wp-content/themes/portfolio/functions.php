@@ -2,6 +2,15 @@
 require_once(__DIR__ . '/Menus/PrimaryMenuWalker.php');
 require_once(__DIR__ . '/Menus/PrimaryMenuItem.php');
 require_once(__DIR__ . '/customSearchQuery.php');
+require_once(__DIR__ . '/Forms/BaseFormController.php');
+require_once(__DIR__ . '/Forms/ContactFormController.php');
+require_once(__DIR__ . '/Forms/Sanitizers/BaseSanitizer.php');
+require_once(__DIR__ . '/Forms/Sanitizers/TextSanitizer.php');
+require_once(__DIR__ . '/Forms/Sanitizers/EmailSanitizer.php');
+require_once(__DIR__ . '/Forms/Validators/BaseValidator.php');
+require_once(__DIR__ . '/Forms/Validators/RequiredValidator.php');
+require_once(__DIR__ . '/Forms/Validators/EmailValidator.php');
+require_once(__DIR__ . '/Forms/Validators/AcceptedValidator.php');
 
 
 // Lancer la sessions PHP pour pouvoir passer des variables de page en page
@@ -57,7 +66,7 @@ register_post_type('project', [
     'public' => true,
     'has_archive' => true,
     'menu_position' => 8,
-    'menu_icon' => 'dashicons-palmtree',
+    'menu_icon' => 'dashicons-media-code',
     'supports' => ['title','editor','thumbnail'],
     'rewrite' => ['slug' => 'projects'],
 ]);
@@ -139,4 +148,59 @@ function portfolio_get_template_page(string $template)
 
     // Retourner le premier Post en question
     return $query->posts[0] ?? null;
+}
+
+
+// Enregistrer un custom post-type pour les messages de contact
+
+register_post_type('message', [
+    'label' => 'Messages de contact',
+    'labels' => [
+        'name' => 'Messages de contact',
+        'singular_name' => 'Message de contact',
+    ],
+    'description' => 'Les messages envoyés par le formulaire de contact.',
+    'public' => false,
+    'show_ui' => true,
+    'menu_position' => 15,
+    'menu_icon' => 'dashicons-buddicons-pm',
+    'capabilities' => [
+        'create_posts' => false,
+        'read_post' => true,
+        'read_private_posts' => true,
+        'edit_posts' => true,
+    ],
+    'map_meta_cap' => true,
+]);
+
+// Gérer l'envoi de formulaire personnalisé
+
+add_action('admin_post_submit_contact_form', 'portfolio_handle_submit_contact_form');
+
+function portfolio_handle_submit_contact_form()
+{
+    // Instancier le controlleur du form
+    $form = new ContactFormController($_POST);
+}
+
+function portfolio_get_contact_field_value($field)
+{
+    if(! isset($_SESSION['contact_form_feedback'])) {
+        return '';
+    }
+
+    return $_SESSION['contact_form_feedback']['data'][$field] ?? '';
+}
+
+function portfolio_get_contact_field_error($field)
+{
+    if(! isset($_SESSION['contact_form_feedback'])) {
+        return '';
+    }
+
+    if(! ($_SESSION['contact_form_feedback']['errors'][$field] ?? null)) {
+        return '';
+    }
+
+    return '<p>Ce champ ne respecte pas : ' . $_SESSION['contact_form_feedback']['errors'][$field] . '</p>';
 }
