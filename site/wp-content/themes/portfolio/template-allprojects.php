@@ -1,4 +1,4 @@
-<?php /* Template Name: projects */ ?>
+<?php /* Template Name: allprojects */ ?>
 <?php get_header(); ?>
 <?php
 $ctaImage = get_field('illustration_cta');
