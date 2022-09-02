@@ -3,12 +3,13 @@
 <?php
 $ctaImage = get_field('illustration_cta');
 ?>
-    <div class="projectsIntro">
-        <div class="projectsIntro__container">
-            <div class="projectsIntro__text">
-                <h1 class="projectsIntro__title"><?php the_field('title') ?></h1>
+    <div class="gallery">
+        <div class="gallery__container">
+            <div class="gallery__text">
+                <h1 class="gallery__title"><?php the_field('title') ?></h1>
+                <p class="gallery__description"><?php the_field('description') ?></p>
             </div>
-            <img src="<?= get_field('illustration')['url'] ?>" alt="<?= get_field('illustration')['alt'] ?>" class="projectsIntro__img">
+            <img src="<?= get_field('illustration')['url'] ?>" alt="<?= get_field('illustration')['alt'] ?>" class="gallery__img">
         </div>
     </div>
     </header>
@@ -22,7 +23,9 @@ $ctaImage = get_field('illustration_cta');
                         </div>
                         <div class="card__text">
                             <h2 class="card__title"><?php the_field('title') ?></h2>
-                            <p class="card__description"><?php the_field('description') ?></p><a target="_blank" href="<?= get_field('link')['url'] ?>" class="card__link"><?= get_field('link')['title'] ?></a>
+                            <p class="card__description"><?php the_field('description') ?></p>
+                            <p class="card__date">Published by <?= get_the_author_firstname(); ?> in <time class="post__date" datetime="<?= get_the_date('M Y'); ?>"><?= get_the_date('M Y'); ?></time></p>
+                            <a target="_blank" href="<?= get_field('link')['url'] ?>" class="card__link"><?= get_field('link')['title'] ?></a>
                         </div>
                     </div>
                 </article>

@@ -6,7 +6,7 @@ class AcceptedValidator extends BaseValidator
     {
         if($value !== '1') 
         {
-            return __('Veuillez cocher la case ci-dessus pour continuer.','dw');
+            return __('Please check the box above to continue.','dw');
         }
 
         return null;

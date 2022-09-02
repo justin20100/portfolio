@@ -36,4 +36,87 @@ strong{
   animation: hand 3s infinite ease-out;
 }
 
+@media screen and (max-width: 1400px){
+  .cta__title{
+    font-size: calc-em(100,16);
+  }
+  .cta__description{
+    font-size: calc-em(20,16);
+  }
+  .cta__img{
+    width: calc-em(410,16);
+  }
+}
+@media screen and (max-width: 1250px){
+  .cta__title{
+    font-size: calc-em(90,16);
+  }
+  .cta__img{
+    width: calc-em(350,16);
+  }
+}
+@media screen and (max-width: 1130px){
+  .cta__title{
+    font-size: calc-em(80,16);
+  }
+  .cta__description{
+    font-size: calc-em(19,16);
+  }
+  .cta__img{
+    width: calc-em(320,16);
+  }
+  .cta__container{
+    margin: calc-em(20,16) calc-em(60,16) calc-em(150,16);
+  }
+  .cta__illustration{
+    top: -17em;
+  }
+}
+@media screen and (max-width: 950px){
+  .cta__title{
+    font-size: calc-em(70,16);
+  }
+  .cta__description{
+    font-size: calc-em(18,16);
+  }
+  .cta__img{
+    width: calc-em(260,16);
+  }
+  .cta__illustration{
+    top: -12em;
+  }
+}
+@media screen and (max-width: 850px){
+  .cta__title{
+    font-size: calc-em(60,16);
+    width: 100%;
+  }
+  .cta__description{
+    font-size: calc-em(17,16);
+  }
+  .cta__img{
+    width: calc-em(240,16);
+  }
+  .cta__container{
+    margin: calc-em(15,16) calc-em(40,16) calc-em(110,16);
+  }
+  .cta__illustration{
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 700px){
+  .cta__title{
+    font-size: calc-em(50,16);
+  }
+  .cta__description{
+    font-size: calc-em(17,16);
+  }
+  .cta__img{
+    width: calc-em(240,16);
+  }
+  .cta__container{
+    margin: calc-em(14,16) calc-em(25,16) calc-em(100,16);
+  }
+}
+
 

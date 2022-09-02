@@ -11,11 +11,43 @@ header{
   font-family: robotoLight,sans-serif;
   font-size: calc-em(22,16);
 }
-.nav__item:first-child{
+.nav__item:nth-child(n+1), .nav__item:nth-child(n+2){
   margin-bottom: calc-em(20,22);
 }
 .nav__link{
   text-decoration: none;
   color: $blackGreen;
   border-bottom: solid 2px $appleGreen;
+}
+
+@media screen and (max-width: 1400px){
+  .nav__menu{
+    font-size: calc-em(20,16);
+  }
+}
+@media screen and (max-width: 1250px){
+  .nav__menu{
+    font-size: calc-em(19,16);
+  }
+}
+@media screen and (max-width: 1130px){
+  .nav{
+    margin: calc-em(30,16) calc-em(60,16) 0;
+  }
+}
+@media screen and (max-width: 1100px){
+  .nav__svg{
+    height: 50px;
+    width: 50px;
+  }
+}
+@media screen and (max-width: 850px){
+  .nav{
+    margin: calc-em(25,16) calc-em(40,16) 0;
+  }
+}
+@media screen and (max-width: 700px){
+  .nav{
+    margin: calc-em(15,16) calc-em(25,16) 0;
+  }
 }

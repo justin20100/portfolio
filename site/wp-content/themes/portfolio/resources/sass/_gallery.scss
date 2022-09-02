@@ -1,16 +1,29 @@
 /* ----- cta ----- */
-.projectsIntro{
-  margin: 0 calc-em(100,16);
+.gallery{
+  margin: calc-em(100,16) calc-em(100,16) 0 ;
 }
-.projectsIntro__container{
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  justify-items: center;
+.gallery__container{
+  position: relative;
+  padding-bottom: calc-em(100,16);
 }
-.projectsIntro__title{
+.gallery__text{
+  width: 50%;
+}
+.gallery__title{
   font-size: calc-em(120,16);
   color: $darkGreen;
+  margin-bottom: calc-em(40,120);
+}
+.gallery__img{
+  position: absolute;
+  bottom: 0;
+  right: 8%;
+}
+.gallery__description{
+  font-family: robotoLight,sans-serif;
+  font-size: calc-em(20,16);
+  color: $middleGreen;
+  line-height: 1.5em;
 }
 /* ----- project cards ----- */
 .cards{
@@ -45,7 +58,13 @@
   font-family: robotoLight,sans-serif;
   font-size: calc-em(22,16);
   line-height: 1.5em;
-  margin-bottom: calc-em(50,22);
+  margin-bottom: calc-em(20,22);
+}
+.card__date{
+  font-family: robotoLight,sans-serif;
+  font-size: calc-em(18,16);
+  line-height: 1.5em;
+  margin-bottom: calc-em(50,18);
 }
 .card__link{
   font-family: robotoMedium,sans-serif;
