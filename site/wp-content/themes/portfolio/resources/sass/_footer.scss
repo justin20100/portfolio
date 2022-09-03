@@ -31,6 +31,29 @@
   color: $darkGreen;
 }
 .footer__svg{
-  height: 100%;
+  width: 90px;
+  height: 90px;
 }
 
+@media screen and (max-width: 920px){
+  .footer__body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .footer__container {
+    flex-direction: column;
+    align-items:normal;
+    margin: calc-em(70, 16) calc-em(70, 16);
+  }
+  .footer__part{
+    margin-bottom: calc-em(60,16);
+  }
+  .footer__part:first-child{
+    align-self: center;
+  }
+  .footer__part:last-child{
+    margin-bottom: 0;
+  }
+}

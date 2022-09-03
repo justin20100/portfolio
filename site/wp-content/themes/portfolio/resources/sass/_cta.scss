@@ -28,6 +28,7 @@ strong{
 }
 .cta__illustration{
   position: absolute;
+  z-index: -1;
   top: -19em;
   right: 10%;
 }
@@ -36,86 +37,54 @@ strong{
   animation: hand 3s infinite ease-out;
 }
 
-@media screen and (max-width: 1400px){
+@media screen and (max-width: 1200px){
+  .cta__container{
+    margin: calc-em(30,16) calc-em(70,16) calc-em(190,16);
+  }
   .cta__title{
-    font-size: calc-em(100,16);
-  }
-  .cta__description{
-    font-size: calc-em(20,16);
-  }
-  .cta__img{
-    width: calc-em(410,16);
-  }
-}
-@media screen and (max-width: 1250px){
-  .cta__title{
-    font-size: calc-em(90,16);
-  }
-  .cta__img{
-    width: calc-em(350,16);
-  }
-}
-@media screen and (max-width: 1130px){
-  .cta__title{
-    font-size: calc-em(80,16);
+    font-size: calc-em(85,16);
   }
   .cta__description{
     font-size: calc-em(19,16);
   }
   .cta__img{
-    width: calc-em(320,16);
-  }
-  .cta__container{
-    margin: calc-em(20,16) calc-em(60,16) calc-em(150,16);
+    width: calc-em(300,16);
   }
   .cta__illustration{
-    top: -17em;
+    top: -13em;
   }
 }
-@media screen and (max-width: 950px){
+@media screen and (max-width: 800px){
+  .cta__container{
+    margin: calc-em(20,16) calc-em(30,16) calc-em(160,16);
+  }
+  .cta__text{
+    margin-top: calc-em(200,16);
+  }
   .cta__title{
-    font-size: calc-em(70,16);
+    font-size: calc-em(100,16);
+    width: 90%;
   }
   .cta__description{
-    font-size: calc-em(18,16);
+    font-size: calc-em(17,16);
   }
   .cta__img{
-    width: calc-em(260,16);
+    width: calc-em(180,16);
   }
   .cta__illustration{
-    top: -12em;
+    top: -24em;
   }
 }
-@media screen and (max-width: 850px){
+@media screen and (max-width: 660px){
   .cta__title{
     font-size: calc-em(60,16);
     width: 100%;
   }
   .cta__description{
-    font-size: calc-em(17,16);
-  }
-  .cta__img{
-    width: calc-em(240,16);
+    font-size: calc-em(15,16);
   }
   .cta__container{
-    margin: calc-em(15,16) calc-em(40,16) calc-em(110,16);
-  }
-  .cta__illustration{
-    z-index: -1;
-  }
-}
-@media screen and (max-width: 700px){
-  .cta__title{
-    font-size: calc-em(50,16);
-  }
-  .cta__description{
-    font-size: calc-em(17,16);
-  }
-  .cta__img{
-    width: calc-em(240,16);
-  }
-  .cta__container{
-    margin: calc-em(14,16) calc-em(25,16) calc-em(100,16);
+    margin-bottom: calc-em(100,16);
   }
 }
 

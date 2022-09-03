@@ -35,20 +35,22 @@
 }
 .project__mockup{
   width: 100%;
+  position: relative;
+}
+.project__svg{
+  width: 100%;
 }
 .project__adress{
-  width: 100%;
-  background-image: url("../../../../uploads/2022/08/mockup_safari.png");
-  background-repeat: no-repeat;
-  background-size: cover;
   text-align: center;
-  padding: 1.5% 0 ;
+  position: relative;
+  top:  clamp(0px,2.5vw,43px);
 }
 .project__view{
   height: calc-em(650,16);
   overflow: auto;
   border-radius: 0 0 1em 1em;
   box-shadow: 0 8px 8px 3px rgba(0,0,0,0.24);
+  transform: translateY(-5px);
 }
 .project__website{
   width: 100%;
@@ -61,6 +63,9 @@
 .project__url:hover{
   text-decoration-line: underline;
 }
+.button{
+  text-align: center;
+}
 .project__link{
   font-family: robotoMedium,sans-serif;
   font-size: calc-em(17,16);
@@ -71,8 +76,67 @@
   background-color: $middleGreen;
   position: relative;
   bottom: 8px;
-  left: 43%;
 }
 .a.project__link:hover{
   animation: button 0.3s forwards;
+}
+
+
+@media screen and (max-width: 1200px){
+  .project__container{
+    margin: 0 calc-em(70,16) 0;
+  }
+  .projects__title{
+    font-size: calc-em(60,16);
+  }
+  .project_number{
+    font-size: calc-em(100,16);
+  }
+  .project__description{
+    font-size: calc-em(20,16);
+  }
+  .project__url{
+    font-size: calc-em(13,16);
+  }
+  .project__link{
+    font-size: calc-em(14,16);
+  }
+}
+@media screen and (max-width: 800px){
+  .project{
+    margin-bottom: calc-em(120,16);
+  }
+  .project__container{
+    margin: 0 calc-em(30,16) 0;
+  }
+  .project__text{
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .project_number{
+    margin-bottom: calc-em(20,100);
+  }
+  .project__illustration{
+    margin: calc-em(20,16);
+  }
+  .project__url{
+    position: absolute;
+    left: 0;
+    top: -10000px;
+    overflow: hidden;
+  }
+  .project__view{
+    height: calc-em(450,16);
+  }
+}
+@media screen and (max-width: 660px){
+  .projects__title{
+    font-size: calc-em(40,16);
+  }
+  .project_number{
+    font-size: calc-em(70,16);
+  }
+  .project__description{
+    font-size: calc-em(18,16);
+  }
 }

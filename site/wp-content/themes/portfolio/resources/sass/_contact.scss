@@ -1,89 +1,149 @@
-.contactIntro{
-  margin: calc-em(100,16) calc-em(100,16) 0 ;
+.contactIntro {
+  margin: calc-em(100, 16) calc-em(100, 16) 0;
 }
-.contactIntro__container{
+.contactIntro__container {
   position: relative;
-  padding-bottom: calc-em(100,16);
+  padding-bottom: calc-em(100, 16);
 }
-.contactIntro__text{
+.contactIntro__text {
   width: 50%;
 }
-.contactIntro__title{
-  font-size: calc-em(120,16);
+.contactIntro__title {
+  font-size: calc-em(120, 16);
   color: $darkGreen;
-  margin-bottom: calc-em(40,120);
+  margin-bottom: calc-em(40, 120);
 }
-.contactIntro__description{
-  font-family: robotoLight,sans-serif;
-  font-size: calc-em(20,16);
+.contactIntro__description {
+  font-family: robotoLight, sans-serif;
+  font-size: calc-em(20, 16);
   color: $middleGreen;
   line-height: 1.5em;
 }
-.contactIntro__img{
+.contactIntro__img {
   position: absolute;
   bottom: 0;
   right: 8%;
 }
 
 /* ----- form ----- */
-.contact__container{
-  margin: calc-em(100,16);
+.contact__container {
+  margin: calc-em(100, 16);
 }
-.form__label{
-  font-family: rubikBold,sans-serif;
-  font-size: calc-em(32,16);
+.form__label {
+  font-family: rubikBold, sans-serif;
+  font-size: calc-em(32, 16);
   color: $white;
 }
-.form__input{
-  font-size: calc-em(18,16);
-  font-family: robotoLight,sans-serif;
+.form__input {
+  font-size: calc-em(18, 16);
+  font-family: robotoLight, sans-serif;
   display: block;
   border: none;
   border-radius: 0.5em;
-  padding: calc-em(8,18) calc-em(25,18);
+  padding: calc-em(8, 18) calc-em(25, 18);
   width: 700px;
-  margin: calc-em(15,18) 0 calc-em(20,18);
+  margin: calc-em(15, 18) 0 calc-em(20, 18);
 }
-textarea.form__input{
+textarea.form__input {
   resize: none;
 }
-#rules{
+#rules {
   padding: 10px;
 }
-.form__checklabel{
+.form__checklabel {
   color: $white;
-  font-family: robotoLight,sans-serif;
-  font-size: calc-em(20,16);
+  font-family: robotoLight, sans-serif;
+  font-size: calc-em(20, 16);
 }
-.form__checklabel a{
+.form__checklabel a {
   color: $white;
 }
-.form__button{
-  font-family: robotoMedium,sans-serif;
-  font-size: calc-em(17,16);
+.form__button {
+  font-family: robotoMedium, sans-serif;
+  font-size: calc-em(17, 16);
   color: $white;
-  padding: calc-em(13,17) calc-em(40,17);
+  padding: calc-em(13, 17) calc-em(40, 17);
   text-decoration: none;
   border-radius: 0.8em;
   border: none;
   background-color: $middleGreen;
   cursor: pointer;
-  margin-top: calc-em(20,17);
+  margin-top: calc-em(20, 17);
 }
-.contact__alert{
-  font-family: robotoMedium,sans-serif;
-  font-size: calc-em(20,16);
+.contact__alert {
+  font-family: robotoMedium, sans-serif;
+  font-size: calc-em(20, 16);
   color: $appleGreen;
-  margin: calc-em(10,20) 0;
+  margin: calc-em(10, 20) 0;
 }
-.contact__alert:before{
+.contact__alert:before {
   content: "❗️";
 }
-#contact__success{
+#contact__success {
   color: $white;
-  font-size: calc-em(30,16);
-  font-family: robotoBold,sans-serif;
+  font-size: calc-em(30, 16);
+  font-family: robotoBold, sans-serif;
 }
-#contact__success:after{
+#contact__success:after {
   content: " ✅";
+}
+
+
+@media screen and (max-width: 1200px) {
+  .contactIntro {
+    margin: calc-em(100, 16) calc-em(70, 16) 0;
+  }
+  .contactIntro__title {
+    font-size: calc-em(85, 16);
+  }
+  .contactIntro__description {
+    font-size: calc-em(19, 16);
+  }
+  .contactIntro__img {
+    width: calc-em(300, 16);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .contactIntro {
+    margin: calc-em(100, 16) calc-em(30, 16) 0;
+  }
+  .contactIntro__title {
+    font-size: calc-em(100, 16);
+  }
+  .contactIntro__description {
+    font-size: calc-em(17, 16);
+  }
+  .contactIntro__text {
+    width: 100%;
+    margin-bottom: calc-em(200,16);
+  }
+  .contact__container{
+    width: 80%;
+  }
+  .contact__form{
+    width: 100%;
+  }
+  .form__field{
+    width: 100%;
+  }
+  .form__input{
+    width: 88%;
+  }
+
+}
+
+@media screen and (max-width: 660px) {
+  .contactIntro__title {
+    font-size: calc-em(60, 16);
+  }
+  .contactIntro__description {
+    font-size: calc-em(15, 16);
+  }
+  .contactIntro{
+    margin-top: calc-em(40,16);
+  }
+  .contactIntro__img{
+    right: 0%;
+  }
 }

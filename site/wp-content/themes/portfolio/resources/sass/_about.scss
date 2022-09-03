@@ -33,3 +33,42 @@
   background-color: $middleGreen;
   cursor: pointer;
 }
+
+@media screen and (max-width: 1200px){
+  .about__title{
+    font-size: calc-em(60,16);
+  }
+  .about__description{
+    font-size: calc-em(20,16);
+  }
+  .about__container{
+    margin: 0 calc-em(70,16);
+  }
+  .about__img{
+    width: 300px;
+  }
+  .about__button{
+    font-size: calc-em(14,16);
+  }
+}
+@media screen and (max-width: 800px){
+  .about__container{
+    margin: 0 calc-em(30,16);
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .about__img{
+    width: border-box;
+  }
+  .about__button{
+    font-size: calc-em(14,16);
+  }
+}
+@media screen and (max-width: 660px){
+  .about__title{
+    font-size: calc-em(40,16);
+  }
+  .about__description{
+    font-size: calc-em(18,16);
+  }
+}
