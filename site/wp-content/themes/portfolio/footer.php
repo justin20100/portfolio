@@ -11,19 +11,19 @@
                 <h3 class="footer__subtitle"><?php the_field('title_nav_footer'); ?></h3>
                 <ul class="footer__list">
                     <li class="footer__item"><a href="<?= get_field('nav_footer_1')['url']; ?>"
-                                                class="footer__link"><?= get_field('nav_footer_1')['title']; ?></a></li>
+                                                class="footer__link animatedLink"><?= get_field('nav_footer_1')['title']; ?></a></li>
                     <li class="footer__item"><a href="<?= get_field('nav_footer_2')['url']; ?>"
-                                                class="footer__link"><?= get_field('nav_footer_2')['title']; ?></a></li>
+                                                class="footer__link animatedLink"><?= get_field('nav_footer_2')['title']; ?></a></li>
                 </ul>
             </div>
             <div class="footer__part">
                 <h3 class="footer__subtitle"><?php the_field('title_social_footer'); ?></h3>
                 <ul class="footer__list">
                     <li class="footer__item"><a href="<?= get_field('social_footer_1')['url']; ?>"
-                                                class="footer__link"><?= get_field('social_footer_1')['title']; ?></a>
+                                                class="footer__link animatedLink" target="_blank"><?= get_field('social_footer_1')['title']; ?></a>
                     </li>
                     <li class="footer__item"><a href="<?= get_field('social_footer_2')['url']; ?>"
-                                                class="footer__link"><?= get_field('social_footer_2')['title']; ?></a>
+                                                class="footer__link animatedLink" target="_blank"><?= get_field('social_footer_2')['title']; ?></a>
                     </li>
                 </ul>
             </div>
@@ -31,10 +31,10 @@
                 <h3 class="footer__subtitle"><?php the_field('title_contact_footer'); ?></h3>
                 <ul class="footer__list">
                     <li class="footer__item"><a href="<?= get_field('contact_footer_1')['url']; ?>"
-                                                class="footer__link"><?= get_field('contact_footer_1')['title']; ?></a>
+                                                class="footer__link animatedLink"><?= get_field('contact_footer_1')['title']; ?></a>
                     </li>
                     <li class="footer__item"><a href="<?= get_field('contact_footer_2')['url']; ?>"
-                                                class="footer__link"><?= get_field('contact_footer_2')['title']; ?></a>
+                                                class="footer__link animatedLink"><?= get_field('contact_footer_2')['title']; ?></a>
                     </li>
                 </ul>
             </div>

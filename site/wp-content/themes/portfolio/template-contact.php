@@ -4,7 +4,7 @@
     <div class="contactIntro">
         <div class="contactIntro__container">
             <div class="contactIntro__text">
-                <h1 class="contactIntro__title"><?php the_field('title') ?></h1>
+                <h2 class="contactIntro__title"><?php the_field('title') ?></h2>
                 <p class="contactIntro__description"><?php the_field('description') ?></p>
             </div>
             <img src="<?= get_field('illustration')['url'] ?>" alt="<?= get_field('illustration')['alt'] ?>"
@@ -14,7 +14,6 @@
 
     </header>
     <main class="layout contact">
-        <h2 class="contact__title hidden"><?= get_the_title(); ?></h2>
         <div class="contact__container">
             <?php if (!isset($_SESSION['contact_form_feedback']) || !$_SESSION['contact_form_feedback']['success']) : ?>
                 <form action="<?= get_home_url(); ?>/wp-admin/admin-post.php" method="POST" class="contact__form form"

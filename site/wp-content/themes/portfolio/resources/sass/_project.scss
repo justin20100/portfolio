@@ -104,7 +104,10 @@
 }
 @media screen and (max-width: 800px){
   .project{
-    margin-bottom: calc-em(120,16);
+    margin-bottom: calc-em(70,16);
+  }
+  .projects{
+    margin-bottom: calc-em(40,16);
   }
   .project__container{
     margin: 0 calc-em(30,16) 0;

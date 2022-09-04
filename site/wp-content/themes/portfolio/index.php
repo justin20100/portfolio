@@ -7,10 +7,8 @@ $aboutImage = get_field('illustration_about');
     <div class="cta">
         <div class="cta__container">
             <div class="cta__text">
-                <p class="cta__title">Welcome to <strong class="cta__strongName">Justin</strong>'s portfolio.</p>
-                <p class="cta__description"><strong class="cta__strong">Web Design</strong> and <strong
-                            class="cta__strong">Development</strong>
-                    projects</p>
+                <p class="cta__title"><?= the_field('cta') ?></p>
+                <p class="cta__description"><?= the_field('description_cta') ?></p>
             </div>
             <div class="cta__illustration">
                 <img class="cta__img" src="<?= $ctaImage['url'] ?>" alt="<?= $ctaImage['alt'] ?>">
@@ -19,7 +17,7 @@ $aboutImage = get_field('illustration_about');
     </div>
     </header>
     <main class="layout">
-        <div class="projects">
+        <section class="projects">
             <h2 class="projects__title"><?php the_field('title_top'); ?></h2>
             <?php
             $number = 0;
@@ -37,7 +35,7 @@ $aboutImage = get_field('illustration_about');
                                 <div class="project__mockup">
                                     <div class="project__adress">
                                         <a href="<?= get_field('link')['url'] ?>"
-                                           class="project__url"><?= get_field('link')['url'] ?></a>
+                                           class="project__url" target="_blank"><?= get_field('link')['url'] ?></a>
                                     </div>
                                     <svg class="project__svg" viewBox="0 0 996 49" fill="none" >
                                         <path d="M11.3926 0H984.585C990.881 0 995.977 5.12405 995.977 11.4044V48.3838H0V11.4044C0 5.12405 5.11873 0 11.3926 0Z" fill="#E8E8E8"/>
@@ -65,7 +63,7 @@ $aboutImage = get_field('illustration_about');
                                     </div>
                                     <div class="button">
                                         <a href="<?= get_field('link')['url'] ?>"
-                                           class="project__link"><?= get_field('link')['title'] ?></a>
+                                           class="project__link" target="_blank"><?= get_field('link')['title'] ?></a>
                                     </div>
                                 </div>
                             </div>
@@ -76,9 +74,9 @@ $aboutImage = get_field('illustration_about');
                 <p class="trips__empty">No projects to show now. Sorry</p>
             <?php endif;
             wp_reset_query(); ?>
-        </div>
+        </section>
 
-        <div class="about">
+        <section class="about">
             <h2 class="about__title"><?php the_field('title_about'); ?></h2>
             <div class="about__container">
                 <div class="about__illustration">
@@ -90,6 +88,6 @@ $aboutImage = get_field('illustration_about');
                        class="about__button"><?= get_field('button_about')['title']; ?></a>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 <?php get_footer(); ?>

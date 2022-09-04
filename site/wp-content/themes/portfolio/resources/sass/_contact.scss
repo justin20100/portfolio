@@ -70,6 +70,9 @@ textarea.form__input {
   cursor: pointer;
   margin-top: calc-em(20, 17);
 }
+.form__button:hover {
+  animation: button 0.3s forwards;
+}
 .contact__alert {
   font-family: robotoMedium, sans-serif;
   font-size: calc-em(20, 16);
@@ -103,7 +106,6 @@ textarea.form__input {
     width: calc-em(300, 16);
   }
 }
-
 @media screen and (max-width: 800px) {
   .contactIntro {
     margin: calc-em(100, 16) calc-em(30, 16) 0;
@@ -129,10 +131,13 @@ textarea.form__input {
   }
   .form__input{
     width: 88%;
+    font-size: calc-em(18,16);
+  }
+  .form__label{
+    font-size: calc-em(40,16);
   }
 
 }
-
 @media screen and (max-width: 660px) {
   .contactIntro__title {
     font-size: calc-em(60, 16);
@@ -144,6 +149,6 @@ textarea.form__input {
     margin-top: calc-em(40,16);
   }
   .contactIntro__img{
-    right: 0%;
+    right: 0;
   }
 }

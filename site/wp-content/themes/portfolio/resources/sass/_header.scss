@@ -15,11 +15,11 @@ header {
   margin-bottom: calc-em(20, 22);
 }
 .nav__link {
-  text-decoration: none;
   color: $blackGreen;
-  border-bottom: solid 2px $appleGreen;
 }
-
+.nav__svg:hover{
+  animation: 1s linkBorder ease-in-out;
+}
 
 @media screen and (max-width: 1200px) {
   .nav {
@@ -29,6 +29,9 @@ header {
     width: 70px;
     height: 70px;
   }
+  .nav__link {
+     color: $white;
+   }
 }
 @media screen and (max-width: 800px) {
   .nav {
